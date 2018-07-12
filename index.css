@@ -12,23 +12,31 @@ body {
 }
 
 section[wrapper] {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
   height: 100%;
 }
 
-
-section[wrapper] section[header] header {
+header {
   padding: 10px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-section[wrapper] section[body] {
+main {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 10px;
   overflow-y: auto;
   z-index: 1;
+
 }
 
-section[wrapper] section[body] > * {
-  padding: 10px;
+main .start,
+main .middle,
+main .end {
+  grid-column: span 4;
 }
