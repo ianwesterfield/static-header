@@ -38,8 +38,8 @@ main {
     z-index: 1;
 }
 
-main .start,
-main .middle,
-main .end {
+main .left,
+main .center,
+main .right {
     grid-column: span 4;
 }
