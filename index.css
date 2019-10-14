@@ -1,0 +1,164 @@
+/* global */
+
+* {
+    box-sizing: border-box;
+}
+
+/* document */
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #444444;
+}
+
+/* main */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+h3,
+h4,
+h5 {
+    font-weight: 500;
+}
+
+section[wrapper] {
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background-color: #3F8DC6;
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 10px;
+    overflow-y: auto;
+    z-index: 1;
+    padding: 10px;
+}
+
+main>* {
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.primary {
+    grid-column: span 2;
+    grid-row: span 4;
+    background-color: #3F8DC6;
+    color: white;
+}
+
+.secondary {
+    grid-row: span 2;
+    grid-column-start: 3;
+    background-color: #5499CC;
+    color: white;
+}
+
+.accent {
+    grid-row: span 2;
+    grid-column-start: 3;
+    background-color: #8C8C8A;
+    color: white;
+}
+
+/* notifications */
+
+section[notifications] {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    display: grid;
+    grid-row-gap: 20px;
+    width: 400px;
+    z-index: 2;
+}
+
+section[notifications]>* {
+    display: grid;
+    padding: 10px;
+    min-height: 110px;
+    grid-template-rows: 40px 1fr;
+    grid-row-gap: 5px;
+    grid-template-columns: 1fr 50px;
+    box-shadow: 0 0 0 5px white, -3px 1px 0 0 #888888, 5px 3px 9px 2px #888888, -1px 0 6px 4px #888888;
+    color: white;
+    overflow: hidden;
+}
+
+section[notifications] .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section[notifications] .message {
+    grid-column: span 2;
+}
+
+section[notifications] .type-icon {
+    grid-column-start: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17rem;
+    opacity: .3;
+    margin-right: 50%;
+    margin-top: 90%;
+}
+
+section[notifications] .success {
+    background-color: #389374
+}
+
+section[notifications] .info {
+    background-color: #5499CC;
+}
+
+section[notifications] .warn {
+    background-color: #F2B749;
+}
+
+section[notifications] .info .type-icon,
+section[notifications] .warn .type-icon {
+    transform: rotate(-45deg);
+}
+
+section[notifications] .error {
+    background-color: #C64D57;
+}
